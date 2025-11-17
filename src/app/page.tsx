@@ -25,7 +25,7 @@ export default function Home() {
 
       <button
         onClick={() => setCount(count - 1)}
-        className="px-6 py-3 bg-red-500 text-black rounded-md shadow hover:bg-red-600 transition ml-4"
+        className="px-6 py-3 bg-green-500 text-black rounded-md shadow hover:bg-red-600 transition ml-4"
       >  
       The decreasing button
       </button>
