@@ -1,66 +1,36 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+// these are imports for React components that let us make a button
+"use client";
+import { useState } from "react";
+
+
 
 export default function Home() {
+  const [count, setCount] = useState<number>(0);
+  let username: string = "Oliver";
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="flex min-h-screen items-center justify-center bg-blue-200">
+
+      <h1 className="text-4xl font-bold text-red-600">
+        Your name is {username} <br/>
+        The current running count is {count}
+      </h1>
+
+      <button
+        onClick={() => setCount(count + 1)}
+        className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+      >
+        Push me!
+      </button>
+
+      <button
+        onClick={() => setCount(count - 1)}
+        className="px-6 py-3 bg-red-500 text-black rounded-md shadow hover:bg-red-600 transition ml-4"
+      >  
+      The decreasing button
+      </button>
+
+
+    </main>
   );
 }
